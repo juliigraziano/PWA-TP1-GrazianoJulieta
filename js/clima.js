@@ -21,9 +21,11 @@ function obtenerDatos(){
 
             //Agarro lo que está dentro de Main -temperatura, st, presión
             let itemMain = datos.main;
-
+console.log(datos);
             let weatherObeject = {
+                 img: `http://openweathermap.org/img/wn/${datos.weather[0].icon}@2x.png`,
                  clima : datos.weather[0].main,
+                 climaDescripcion: datos.weather[0].description,
                  sensacionT : toCelsius(itemMain.feels_like)+'°',
                  humedad : itemMain.humidity+'%',
                  presion : itemMain.pressure+'hPa',
@@ -38,7 +40,7 @@ function obtenerDatos(){
             resultado.innerHTML=`
             <header>
                 <div class="display display-p alerta container" id="resultado">
-                <img src="img/clima-iconos/${weatherObeject.clima}" alt="${weatherObeject.clima}">
+                <img src="${weatherObeject.img}" alt="${weatherObeject.clima}">
                 
                 <div class="row align-items-center justify-content-center">
                     <span class="col-3">${weatherObeject.temperatura}</span>
@@ -50,7 +52,7 @@ function obtenerDatos(){
                     
                 </div>
 
-                    <p>${weatherObeject.clima}</p>
+                    <p>${weatherObeject.climaDescripcion}</p>
                     <p><abbr title="Sensación Térmica">ST</abbr>${weatherObeject.sensacionT}</p>
 
                 </div>
