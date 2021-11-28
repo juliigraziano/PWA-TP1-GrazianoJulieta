@@ -25,14 +25,14 @@ function obtenerDatos(){
             let itemMain = datos.main;
 
                 weatherObejects.push({
-                    clima : item.weather[0].main,
+                    clima : datos.weather[0].main,
                     sensacionT : toCelsius(itemMain.feels_like),
                     humedad : itemMain.humidity,
                     presion : itemMain.pressure,
                     temperatura : toCelsius(itemMain.temp),
                     maxima : toCelsius(itemMain.temp_max),
                     minima : toCelsius(itemMain.temp_min),
-                    viento : item.wind,
+                    viento : datos.wind,
                 });
 
                 console.log(itemMain);
