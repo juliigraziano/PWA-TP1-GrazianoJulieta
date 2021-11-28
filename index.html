@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="/css/mystyles.css">
+    <link rel="stylesheet" href="css/mystyles.css">
   </head>
 
 <body>
@@ -29,7 +29,7 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item nav-link"> Ciudad actual</li>
+              <li class="nav-item nav-link"> ${ciudadActual}</li>
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -51,53 +51,11 @@
         </div>
       </nav>
 
-      <header>
-        <div class="display display-p alerta container" id="resultado">
-          <img src="img/clima-iconos/nublado.svg" alt="$clima">
-          
-          <div class="row align-items-center justify-content-center">
-            <span class="col-3">10°</span>
-
-            <div class="col-3">
-              <span>$N Max</span>
-              <span>$NMin</span>
-            </div>
-            
-          </div>
-
-            <p>$clima</p>
-            <p><abbr title="Sensación Térmica">ST</abbr> $ST</p>
-
-        </div>
-      </header>
-
       <button class="btn btn-danger" id="ciudad">CONSULTAR CLIMA</button>
 
-      <section class="container">
-        <div class="row row-cols-2 row-cols-md-4 justify-content-evenly ">
-
-          <div class="display col-4 m-2 col-md-2 pt-3">
-            <p><abbr title="Sensación Térmica">ST</abbr></p>
-            <p>numerin</p>
-          </div>
-        
-          <div class="display col-4 m-2 col-md-2 pt-3">
-           <p>Humedad</p>
-           <p>numerin</p>
-          </div>
-
-          <div class="display col-4 m-2 col-md-2 pt-3">
-            <p>Viento</p>
-            <p>numerin</p>
-          </div>
-
-          <div class="display col-4 m-2 col-md-2 pt-3">
-            <p>Presión</p>
-            <p>numerin</p>
-          </div>
-        </div>
-
-      </section>
+      <main>
+      
+      </main>
 
       <footer class="container-fluid playlist py-3">
         <div class="row align-items-center justify-content-center">
