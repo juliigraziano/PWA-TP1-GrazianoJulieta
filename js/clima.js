@@ -21,7 +21,7 @@ function obtenerDatos(){
 
             let weatherObejects = [];
             //Agarro lo que est[a dentro de Main -temperatura, st, presi[on-
-            for(let item of datos.list){
+            //for(let item of datos.list){
                 let itemMain = item.main;
 
                 weatherObejects.push({
@@ -33,10 +33,10 @@ function obtenerDatos(){
                     maxima : toCelsius(itemMain.temp_max),
                     minima : toCelsius(itemMain.temp_min),
                     viento : item.wind,
-                })
+                });
 
                 console.log(itemMain);
-            }
+            //}
             console.log(weatherObejects);
         }
     }
