@@ -22,7 +22,7 @@ function obtenerDatos(){
             let weatherObejects = [];
             //Agarro lo que est[a dentro de Main -temperatura, st, presi[on-
             //for(let item of datos.list){
-                let itemMain = item.main;
+            let itemMain = datos.main;
 
                 weatherObejects.push({
                     clima : item.weather[0].main,
