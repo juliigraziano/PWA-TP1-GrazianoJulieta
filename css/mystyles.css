@@ -1,0 +1,120 @@
+
+/*https://coolors.co/00080c-001a25-002c3d-b8e0e0-8dcec9-fdf8ec-f3c66f-ee9b00-bb3e03-ae2012*/
+:root {
+  --dark: #00080C;
+  --white: #FDF8EC;
+  --fondo: #002C3D;
+  --tormenta:#001A25;
+  --muyfrio: #B8E0E0;
+  --frio: #8DCEC9;
+  --agradable: #F3C66F;
+  --calor: #EE9B00;
+  --muchocalor: #BB3E03;
+  --alerta: #AE2012;
+}
+
+body{
+  background-color: var(--fondo);
+  font-family: 'Roboto', sans-serif;
+  color: var(--white);
+}
+
+nav {
+    margin-bottom: 4rem;
+    background-color: var(--dark);
+}
+
+section{
+  margin-bottom: 6rem;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+span::first-line {
+    font-size: 3rem;
+}
+
+.display {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    background: inherit;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .display-p.container{
+    border-radius: 100%;
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 5rem;
+  }
+
+  .display:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(10px);
+    margin: -20px;
+  
+  }
+
+  .display img {
+    max-width: 8rem;
+  }
+
+  .display.col-4{
+    box-shadow: inset 0 0 2000px rgba(253, 248, 236, .2);
+  }
+
+  .display.col-4 p:first-child {
+    font-size: 0.75rem;
+  }
+
+
+  .playlist { 
+    box-shadow: inset 0 0 2000px rgba(253, 248, 236, .2);
+  }
+
+  footer img{
+    max-height: 50px;
+    background-color: blue;
+  }
+  
+
+  /*****color circulo temperatura******/
+  .frio{
+    box-shadow: inset 0 0 2000px rgba(141, 206, 201, .8);
+  }
+
+  .muyfrio{
+    box-shadow: inset 0 0 2000px rgba(184, 224, 224, .8);
+  }
+
+  .agradable{
+    box-shadow: inset 0 0 2000px rgba(243, 198, 111, .8);
+  }
+
+  .calor{
+    box-shadow: inset 0 0 2000px rgba(238, 155, 0, .8);
+  }
+
+  .muchocalor{
+    box-shadow: inset 0 0 2000px rgba(187, 62, 3, .8);
+  }
+
+  .alerta{
+    box-shadow: inset 0 0 2000px rgba(174, 32, 18, .8);
+  }
+
+
+
