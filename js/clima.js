@@ -4,7 +4,7 @@ document.querySelector('#ciudad').addEventListener('click', function(){
 
 function obtenerDatos(){
     console.log('diste click');
-    let url =   `http://api.openweathermap.org/data/2.5/forecast?id=524901&appid=cba22844979badce462750c91e19f19d`;
+    let url =   `https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=cba22844979badce462750c91e19f19d`;
 
     const api = new XMLHttpRequest();
 
