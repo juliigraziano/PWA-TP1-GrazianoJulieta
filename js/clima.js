@@ -1,10 +1,15 @@
-document.querySelector('#ciudad').addEventListener('click', function(){
-    obtenerDatos();
-});
+//Ciudad actual var global
+const value_busqueda = document.getElementById('busqueda');
 
-function obtenerDatos(){
+document.body.addEventListener('click', ()=>{
+    event.preventDefault();
+    obtenerDatos(value_busqueda.value);
+}); 
+
+
+function obtenerDatos(ciudadActual){
     console.log('diste click');
-    let url =   `https://api.openweathermap.org/data/2.5/weather?q=London&appid=cba22844979badce462750c91e19f19d`;
+    let url =   `https://api.openweathermap.org/data/2.5/weather?q=${ciudadActual}&appid=cba22844979badce462750c91e19f19d`;
 
     const api = new XMLHttpRequest();
 
@@ -21,7 +26,7 @@ function obtenerDatos(){
 
             //Agarro lo que está dentro de Main -temperatura, st, presión
             let itemMain = datos.main;
-console.log(datos);
+
             let weatherObeject = {
                  img: `http://openweathermap.org/img/wn/${datos.weather[0].icon}@2x.png`,
                  clima : datos.weather[0].main,
