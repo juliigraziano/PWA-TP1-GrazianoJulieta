@@ -20,10 +20,6 @@ function obtenerDatos(ciudadActual){
         if(this.status == 200 && this.readyState == 4){
             let datos = JSON.parse(this.responseText);
 
-            
-            let resultado = document.querySelector('main');
-            resultado.innerHTML = '';
-
             //Agarro lo que está dentro de Main -temperatura, st, presión
             let itemMain = datos.main;
 
@@ -42,9 +38,10 @@ function obtenerDatos(ciudadActual){
 
             console.log(weatherObeject);
 
-            resultado.innerHTML=`
-            <header>
-                <div class="display display-p alerta container" id="resultado">
+            let display = document.getElementById('resultadoDisplay');
+            let detallado = document.getElementById('resultadoDetallado');
+            
+            display.innerHTML=`
                 <img src="${weatherObeject.img}" alt="${weatherObeject.clima}">
                 
                 <div class="row align-items-center justify-content-center">
@@ -56,14 +53,11 @@ function obtenerDatos(ciudadActual){
                     </div>
                     
                 </div>
-
+                    <p>${ciudadActual}</p>
                     <p>${weatherObeject.climaDescripcion}</p>
-                    <p><abbr title="Sensación Térmica">ST</abbr>${weatherObeject.sensacionT}</p>
+                    <p><abbr title="Sensación Térmica">ST</abbr>${weatherObeject.sensacionT}</p>`;
 
-                </div>
-            </header>
-
-            <section class="container">
+            detallado.innerHTML=`
                 <div class="row row-cols-2 row-cols-md-4 justify-content-evenly ">
 
                 <div class="display col-4 m-2 col-md-2 pt-3">
@@ -85,9 +79,7 @@ function obtenerDatos(ciudadActual){
                     <p>Presión</p>
                     <p>${weatherObeject.presion}</p>
                 </div>
-                </div>
-
-            </section>`;
+                </div>`;
         }
     }
 
