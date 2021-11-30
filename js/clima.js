@@ -36,10 +36,12 @@ function obtenerDatos(ciudadActual){
                  viento : datos.wind.speed+'m/s',
             };
 
-            console.log(weatherObeject);
+            colorDisplay(itemMain.temp);
 
+//-------------IMPRIMIR DATOS----------------------------------//
             let display = document.getElementById('resultadoDisplay');
             let detallado = document.getElementById('resultadoDetallado');
+            document.getElementById('city').innerHTML=`${ciudadActual}`;
             
             display.innerHTML=`
                 <img src="${weatherObeject.img}" alt="${weatherObeject.clima}">
@@ -83,10 +85,52 @@ function obtenerDatos(ciudadActual){
         }
     }
 
+}
+
+var lastClass='standar';
+
+    function colorDisplay(temp){
+        let element = document.getElementById('resultadoDisplay');
+        temp=toCelsius(temp);
+        console.log(temp);
+
+        element.classList.remove(lastClass);
+        
+        if (temp >= 34){
+           /* element.classList.add('alerta');
+            element.classList.remove(lastClass);*/
+            lastClass = 'alerta';
+        }
+        else if (temp >=30){
+          /*  element.classList.remove(lastClass);
+            element.classList.add('muchocalor');*/
+            lastClass = 'muchocalor';
+        }
+        else if (temp >=27){
+            /*element.classList.remove(lastClass);
+            element.classList.add('calor');*/
+            lastClass = 'calor';
+        }
+        else if (temp >=20){
+            //element.classList.add('agradable');
+            //element.classList.remove(lastClass);
+            lastClass = 'agradable';
+        }
+        else if (temp >=6){
+            //element.classList.add('frio');
+            //element.classList.remove(lastClass);
+            lastClass = 'frio';
+        }
+        else{
+            
+            lastClass = 'muyfrio';
+        }
+       
+        element.classList.add(lastClass);
+    }
+
     function toCelsius(temperatureToConvert){
         let tempInKelvin = parseInt(temperatureToConvert);
         let tempInCelsius = tempInKelvin - 273;
         return tempInCelsius.toString();
     }
-
-}

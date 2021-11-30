@@ -81,17 +81,21 @@ span::first-line {
   }
 
 
-  .playlist { 
+  /*.playlist { 
     box-shadow: inset 0 0 2000px rgba(253, 248, 236, .2);
   }
 
   footer img{
     max-height: 50px;
     background-color: blue;
-  }
+  }*/
   
 
   /*****color circulo temperatura******/
+  .standar{
+    box-shadow: inset 0 0 2000px rgba(202, 202, 202, 0.705);
+  }
+
   .frio{
     box-shadow: inset 0 0 2000px rgba(141, 206, 201, .8);
   }
