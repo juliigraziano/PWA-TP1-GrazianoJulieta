@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheather or not app</title>
+    <title>Graziano Julieta - PWA Turno Noche TP1</title>
 <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 <!-- Google Fonts -->    
@@ -29,17 +29,7 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item nav-link"> ${ciudadActual}</li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Mis ubicaciones
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item ciudad" href="#">ciudad 1</a></li>
-                  <li><a class="dropdown-item ciudad" href="#">ciudad 2</a></li>
-                </ul>
-              </li>
+              <li class="nav-item nav-link">Ciudad actual: <span id="city"></span>  </li>
             </ul>
 
             <h2 class="fs-6 me-2 text-light">Agregar nueva ubicación:</h2>
@@ -54,7 +44,7 @@
       
       <main>
         <header>
-          <div class="display display-p alerta container" id="resultadoDisplay"></div>
+          <div class="display display-p container" id="resultadoDisplay"></div>
       </header>
 
       <section class="container" id="resultadoDetallado"></section>
