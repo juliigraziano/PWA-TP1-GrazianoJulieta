@@ -87,6 +87,7 @@ function obtenerDatos(ciudadActual){
 
 }
 
+/*-------------CAMBIO DE COLOR X TEMPERATURA----------*/
 var lastClass='standar';
 
     function colorDisplay(temp){
@@ -97,35 +98,25 @@ var lastClass='standar';
         element.classList.remove(lastClass);
         
         if (temp >= 34){
-           /* element.classList.add('alerta');
-            element.classList.remove(lastClass);*/
             lastClass = 'alerta';
         }
         else if (temp >=30){
-          /*  element.classList.remove(lastClass);
-            element.classList.add('muchocalor');*/
             lastClass = 'muchocalor';
         }
         else if (temp >=27){
-            /*element.classList.remove(lastClass);
-            element.classList.add('calor');*/
             lastClass = 'calor';
         }
         else if (temp >=20){
-            //element.classList.add('agradable');
-            //element.classList.remove(lastClass);
             lastClass = 'agradable';
         }
         else if (temp >=6){
-            //element.classList.add('frio');
-            //element.classList.remove(lastClass);
             lastClass = 'frio';
         }
         else{
             
             lastClass = 'muyfrio';
         }
-       
+
         element.classList.add(lastClass);
     }
 
