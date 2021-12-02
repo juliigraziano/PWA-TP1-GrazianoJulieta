@@ -35,8 +35,11 @@ function obtenerDatos(ciudadActual){
                  minima : toCelsius(itemMain.temp_min)+'°',
                  viento : datos.wind.speed+'m/s',
             };
-
+//----------Cambia color de display según temperatura---------//
             colorDisplay(itemMain.temp);
+
+//----------Cambia fondo del body según clima-----------------//
+
 
 //-------------IMPRIMIR DATOS----------------------------------//
             let display = document.getElementById('resultadoDisplay');
