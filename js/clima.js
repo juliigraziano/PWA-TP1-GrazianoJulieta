@@ -1,7 +1,7 @@
 //Ciudad actual var global
 const value_busqueda = document.getElementById('busqueda');
 
-document.body.addEventListener('click', ()=>{
+document.body.addEventListener('submit', ()=>{
     event.preventDefault();
     obtenerDatos(value_busqueda.value);
 }); 
@@ -9,7 +9,7 @@ document.body.addEventListener('click', ()=>{
 
 function obtenerDatos(ciudadActual){
     console.log('diste click');
-    let url =   `https://api.openweathermap.org/data/2.5/weather?q=${ciudadActual}&appid=cba22844979badce462750c91e19f19d`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudadActual}&appid=cba22844979badce462750c91e19f19d`;
 
     const api = new XMLHttpRequest();
 
@@ -85,6 +85,10 @@ function obtenerDatos(ciudadActual){
                     <p>${weatherObeject.presion}</p>
                 </div>
                 </div>`;
+
+                console.log(datos.coord);
+
+               updateMap(datos.coord.lat, datos.coord.lon);
         }
     }
 
@@ -128,3 +132,20 @@ var lastClass='standar';
         let tempInCelsius = tempInKelvin - 273;
         return tempInCelsius.toString();
     }
+
+
+//TOMTOM MAP
+
+var map = tt.map({
+    key: 'Vcoh38yYkRiGbBWtUlqfv07yA0A61uHo',
+    container: 'map',
+});
+map.addControl(new tt.FullscreenControl());
+map.addControl(new tt.NavigationControl());
+
+function updateMap(locationLat,locationLong){
+    map.flyTo({
+        center: [locationLong,locationLat],
+        zoom:12,
+    })
+}
