@@ -175,10 +175,10 @@ function fondoMain(clima){
     fondo.classList.remove(lastFondo);
     
     if (clima == 'Clear'){
-        console.log('clear');
+        lastFondo = 'clear';
     }
     else if (clima == 'Thunderstorm'){
-        console.log('Thunderstorm');
+        lastFondo = 'thunderstorm';
     }
     else if (clima == 'Rain' || clima =='Drizzle'){
         lastFondo = 'rain';
