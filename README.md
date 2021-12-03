@@ -5,3 +5,6 @@
 JULIETA GRAZIANO
 APLICACIONES WEB MOVILES - TURNO NOCHE
 Camino elegido: B - Tomtom
+
+Observación:
+Tarda un poco en cargar el mapa
