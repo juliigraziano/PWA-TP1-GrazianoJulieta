@@ -121,6 +121,5 @@ span::first-line {
   }
 
 .map{
-  min-height: 50vh;
-  z-index: 0;
+  height: 30vh;
 }

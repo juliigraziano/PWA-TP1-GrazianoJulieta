@@ -146,6 +146,6 @@ map.addControl(new tt.NavigationControl());
 function updateMap(locationLat,locationLong){
     map.flyTo({
         center: [locationLong,locationLat],
-        zoom:12,
+        zoom:8,
     })
 }
