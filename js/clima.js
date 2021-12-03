@@ -38,7 +38,9 @@ function obtenerDatos(ciudadActual){
 //----------Cambia color de display según temperatura---------//
             colorDisplay(itemMain.temp);
 
-//----------Cambia fondo del body según clima-----------------//
+//----------Cambia fondo del main según clima-----------------//
+           fondoMain(weatherObeject.clima);
+         console.log(weatherObeject.clima);
 
 
 //-------------IMPRIMIR DATOS----------------------------------//
@@ -100,7 +102,6 @@ var lastClass='standar';
     function colorDisplay(temp){
         let element = document.getElementById('resultadoDisplay');
         temp=toCelsius(temp);
-        console.log(temp);
 
         element.classList.remove(lastClass);
         
@@ -132,6 +133,31 @@ var lastClass='standar';
         let tempInCelsius = tempInKelvin - 273;
         return tempInCelsius.toString();
     }
+
+/*-------------CAMBIO IMG FONDO DEL MAIN X CLIMA----------*/
+var lastFondo = 'p-1';
+
+function fondoMain(clima){
+    let fondo = document.querySelector('main');
+
+    fondo.classList.remove(lastFondo);
+    
+    if (clima == 'Clear'){
+        lastFondo = 'clear';
+    }
+    else if (clima == 'Thunderstorm'){
+        lastFondo = 'thunderstorm';
+    }
+    else if (clima == 'Rain' || 'Drizzle'){
+        lastFondo = 'rain';
+    }
+    else if (clima =='Clouds' || 'Snow'){
+        lastFondo = 'clouds';
+    }
+    
+
+    fondo.classList.add(lastFondo);
+}
 
 
 //TOMTOM MAP
