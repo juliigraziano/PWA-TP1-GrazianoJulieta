@@ -1,5 +1,7 @@
-//Ciudad actual var global
+//VARIABLES GLOBALES
 var map='';
+var lastFondo = 'p-1';
+var lastClass='standar';
 const value_busqueda = document.getElementById('busqueda');
 
 document.body.addEventListener('submit', ()=>{
@@ -100,22 +102,22 @@ function imprimir (datos){
      detallado.innerHTML=`
          <div class="row row-cols-2 row-cols-md-4 justify-content-evenly ">
 
-         <div class="display col-4 m-2 col-md-2 pt-3">
+         <div class="display datos col-4 m-2 col-md-2 pt-3">
              <p><abbr title="Sensación Térmica">ST</abbr></p>
              <p>${weatherObeject.sensacionT}</p>
          </div>
          
-         <div class="display col-4 m-2 col-md-2 pt-3">
+         <div class="display datos col-4 m-2 col-md-2 pt-3">
          <p>Humedad</p>
          <p>${weatherObeject.humedad}</p>
          </div>
 
-         <div class="display col-4 m-2 col-md-2 pt-3">
+         <div class="display datos col-4 m-2 col-md-2 pt-3">
              <p>Viento</p>
              <p>${weatherObeject.viento}</p>
          </div>
 
-         <div class="display col-4 m-2 col-md-2 pt-3">
+         <div class="display datos col-4 m-2 col-md-2 pt-3">
              <p>Presión</p>
              <p>${weatherObeject.presion}</p>
          </div>
@@ -127,7 +129,6 @@ function imprimir (datos){
 
 
 /*-------------CAMBIO DE COLOR X TEMPERATURA----------*/
-var lastClass='standar';
 
     function colorDisplay(temp){
         let element = document.getElementById('resultadoDisplay');
@@ -165,27 +166,27 @@ var lastClass='standar';
     }
 
 /*-------------CAMBIO IMG FONDO DEL MAIN X CLIMA----------*/
-var lastFondo = 'p-1';
+
 
 function fondoMain(clima){
+    
     let fondo = document.querySelector('main');
 
     fondo.classList.remove(lastFondo);
     
     if (clima == 'Clear'){
-        lastFondo = 'clear';
+        console.log('clear');
     }
     else if (clima == 'Thunderstorm'){
-        lastFondo = 'thunderstorm';
+        console.log('Thunderstorm');
     }
-    else if (clima == 'Rain' || 'Drizzle'){
+    else if (clima == 'Rain' || clima =='Drizzle'){
         lastFondo = 'rain';
     }
-    else if (clima =='Clouds' || 'Snow'){
+    else if (clima =='Clouds' || clima == 'Snow'){
         lastFondo = 'clouds';
     }
     
-
     fondo.classList.add(lastFondo);
 }
 
